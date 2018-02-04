@@ -1,25 +1,25 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: harperdb
+  name: harperdb-client
   namespace: golftv
   labels:
-    name: harperdb
+    name: harperdb-client
     ver: '0.0.1'
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: harperdb
+      app: harperdb-client
   template:
     metadata:
       labels:
-        app: harperdb
+        app: harperdb-client
         ver: '0.0.1'
     spec:
       containers:
-      - name: harperdb
-        image: harperdb-client
+      - name: harperdb-client
+        image: harperdb-client:kubelocal
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
