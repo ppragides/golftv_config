@@ -162,10 +162,6 @@ done
 kubectl create -f $PROJECT_ROOT/$CONFIG_DIR/minikube/harperdb-client-service.yaml
 kubectl create -f $PROJECT_ROOT/$CONFIG_DIR/minikube/harperdb-client-deployment.yaml   
 
-# HarperDB
-kubectl create -f $PROJECT_ROOT/$CONFIG_DIR/minikube/harperdb-service.yaml
-kubectl create -f $PROJECT_ROOT/$CONFIG_DIR/minikube/harperdb-deployment.yaml   
-
 # NGINX / Static container
 kubectl create -f $PROJECT_ROOT/$CONFIG_DIR/minikube/golftv-static-service.yaml
 kubectl create -f $PROJECT_ROOT/$CONFIG_DIR/minikube/golftv-static-deployment.yaml    
