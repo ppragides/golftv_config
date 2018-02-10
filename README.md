@@ -12,7 +12,19 @@
 6. git version 2.11.0 (Apple Git-81)
 
 # What does this do?
+This application allows you to create your own local setup for a client/server setup for a tvOS application to view your local videos through an Apple TV!
 
+The server will:
+
+1. Store data regarding your videos
+2. Allow you to retrieve video data
+3. Sets up a JS application framework where your tvOS client will delegate control to
+4. Serve out TVML that will be consumed by your tvOS client
+
+The client will:
+
+1. Delegate control to the server JS application
+2. Provide an interface for you to browse and play videos stored in the server
 
 # HarperDB Setup
 ## Run the `harper-init.sh` script to initialize the schema, table and import some demo data into HarperDB
@@ -33,8 +45,10 @@ At this point you should have two pods running, one for golftv-static and anothe
 # tvOS Testing
 Once your local kubernetes cluster has the required pods up and running, set up the following host entry:
 
-<minikube ip> local.golf.tv
+*minikube-ip* local.golf.tv
 
-Lastly, create a new tvOS app, and set the tvBaseURL variable to:
+Next, create a new tvOS app in XCode, and set the tvBaseURL variable to:
 
-static let tvBaseURL = "http://local.golf.tv:30080/"
+*static let tvBaseURL = "http://local.golf.tv:30080/"*
+
+Finally, RUN your application in XCode and use the interactive simulator to test out your application.  At this point, you're free to make modifications to the golftv-static or harperdb-client repositories in order to customize the XML that gets consumed by the application.
